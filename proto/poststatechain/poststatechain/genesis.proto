@@ -1,0 +1,17 @@
+syntax = "proto3";
+package poststatechain.poststatechain;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "poststatechain/poststatechain/params.proto";
+
+option go_package = "poststate-chain/x/poststatechain/types";
+
+// GenesisState defines the poststatechain module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
